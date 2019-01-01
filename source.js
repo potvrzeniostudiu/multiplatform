@@ -36,8 +36,8 @@ $(document).ready(function () {
 
     $.ajax(settings).done(function (response) {
 
-      blog_1 = (response.list[0].blog_name);
-      teplota = (response.list[1].blog_name);
+      blog_1 = (response.posts[0].blog_name);
+      teplota = (response.posts[1].blog_name);
       $(".vysledky").append(blog_1);
       console.log(teplota);
     });
