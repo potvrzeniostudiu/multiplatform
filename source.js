@@ -15,13 +15,15 @@ $(document).ready(function () {
       console.log(makeid());*/
 
 
+      /*!--<input type="submit" value="Odeslat" class="odeslat">--!*/
   var server = "https://api.tumblr.com/v2/tagged?tag="
   var api_klic = "&api_key=rINPEI7pnSo05XfzS2S3oVNTu4JT9RD8qRH1zhdCh9ShEz33uJ"
 
 
-  $('.odeslat').submit(function(e) {
-    e.stopImmediatePropagation()
+  $('.odeslat').click(function(e) {
+    e.preventDefault();
     tag = $(".tag").val();
+    console.log("zmacknuto");
 
     var settings = {
       "async": true,
@@ -35,7 +37,7 @@ $(document).ready(function () {
 
 
     $.ajax(settings).done(function(response) {
-
+      console.log("foo");
       blog_1 = (response.posts[0].blog_name);
       teplota = (response.posts[1].blog_name);
       $(".vysledky").append(blog_1);
