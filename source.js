@@ -19,7 +19,7 @@ $(document).ready(function () {
   var api_klic = "&api_key=rINPEI7pnSo05XfzS2S3oVNTu4JT9RD8qRH1zhdCh9ShEz33uJ"
 
 
-  $('.odeslat').submit(function (e) {
+  $('.odeslat').submit(function(e) {
     e.preventDefault();
     tag = $(".tag").val();
 
@@ -34,7 +34,7 @@ $(document).ready(function () {
     }
 
 
-    $.ajax(settings).done(function (response) {
+    $.ajax(settings).done(function(response) {
 
       blog_1 = (response.posts[0].blog_name);
       teplota = (response.posts[1].blog_name);
