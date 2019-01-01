@@ -36,10 +36,10 @@ $(document).ready(function () {
     }
 
 
-    $.ajax(settings).done(function(response) {
+    $.ajax(settings).done(function(odpoved) {
       console.log("foo");
-      blog_1 = (response.posts[0].blog_name);
-      teplota = (response.posts[1].blog_name);
+      blog_1 = (odpoved.response.posts[0].blog_name);
+      teplota = (odpoved.response.posts[1].blog_name);
       $(".vysledky").append(blog_1);
       console.log(teplota);
     });
