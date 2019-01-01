@@ -1,6 +1,7 @@
 
-$( document ).ready(function() {
+$(document).ready(function () {
 
+  /*
     function makeid() {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -11,33 +12,34 @@ $( document ).ready(function() {
         return text;
       }
       
-      console.log(makeid());
-
-  /*
-    var server = "https://api.openweathermap.org/data/2.5/forecast?q="
-    var api_klic = "&APPID=afb6e76426a0802ed7f8dcdb42900eab&units=metric"
+      console.log(makeid());*/
 
 
-    $.ajax({
-        url: "https://api.twitter.com/1.1/tweets/search/30day/production.json",
-        beforeSend: function(xhr) { 
-          xhr.setRequestHeader("Authorization", "Basic " + btoa("username:password")); 
-        },
-        type: 'POST',
-        dataType: 'json',
-        contentType: 'application/json',
-        processData: false,
-        data: '{"query":"from:TwitterDev lang:en",
-                "maxResults": "100",
-                "fromDate":"<YYYYMMDDHHmm>", 
-                "toDate":"<YYYYMMDDHHmm>"
-            }',
-        success: function (data) {
-          alert(JSON.stringify(data));
-        },
-        error: function(){
-          alert("Cannot get data");
-        }
+  var server = "https://api.tumblr.com/v2/tagged?tag="
+  var api_klic = "&api_key=rINPEI7pnSo05XfzS2S3oVNTu4JT9RD8qRH1zhdCh9ShEz33uJ"
+
+
+  $('.odeslat').submit(function (e) {
+    e.preventDefault();
+    tag = $(".tag").val();
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": server + tag + api_klic,
+      "method": "GET",
+      error: function (e) {
+        console.log("failure");
+      }
+    }
+
+
+    $.ajax(settings).done(function (response) {
+
+      blog_1 = (response.list[0].blog_name);
+      teplota = (response.list[1].blog_name);
+      $(".vysledky").append(blog_1);
+      console.log(teplota);
     });
-*/
+  });
 });
