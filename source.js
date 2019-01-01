@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 
   $('.odeslat').submit(function(e) {
-    e.preventDefault();
+    e.stopImmediatePropagation()
     tag = $(".tag").val();
 
     var settings = {
