@@ -23,7 +23,7 @@ $(document).ready(function () {
     $.ajax(settings).done(function(odpoved) {
       for (var i = 0; i < 3; i++) {     //problem, pokud neni min. pocet prispevku --> moznost pouzit odpoved.response.length
 
-        if(null == odpoved.response[i].photos) {    //pokud json obsahuje key photos
+        if(null != odpoved.response[i].photos) {    //pokud json obsahuje key photos
           post_picture = (odpoved.response[i].photos[0].original_size.url);   
           console.log("foo");
           $(".tumblr").append('<img src="' + post_picture + '">');    //prida obrazek
