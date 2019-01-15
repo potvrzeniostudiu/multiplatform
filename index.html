@@ -6,7 +6,10 @@
   <title>title</title>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-  <script src="source.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="tumblr.js"></script>
+  <script src="instagram.js"></script>
 </head>
 
 <body>
@@ -14,7 +17,19 @@
     <input class="tag" value="" placeholder="vložte tag">
     <button class="odeslat">Odeslat</button>
   </form>
-  <div class="vysledky"></div>
+  
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tumblr"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="tag_picture"></div>
+        <div id="instagram"></div>
+      </div>
+    </div>
 </body>
 
 </html>
