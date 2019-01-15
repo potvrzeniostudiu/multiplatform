@@ -9,11 +9,9 @@ $(document).ready(function () {
         $.get('https://www.instagram.com/explore/tags/' + tag + '/?__a=1', function (data, status) {
             $('#instagram, #tag_picture').empty();
             
-            var $that = data.graphql.hashtag.edge_hashtag_to_media.edges[i].node;
-            
             for (var i = 0; i < 6; i++) {
 
-               
+                var $that = data.graphql.hashtag.edge_hashtag_to_media.edges[i].node;
 
                 $('#instagram').append('<div id="post_' + i + '"></div>');
 
