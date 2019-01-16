@@ -3,11 +3,11 @@ $(document).ready(function () {
 
     $('.odeslat').click(function (e) {
         e.preventDefault();
-
         var tag = $(".tag").val();
+        $('#instagram, #tag_picture').empty();
 
         $.get('https://www.instagram.com/explore/tags/' + tag + '/?__a=1', function (data, status) {
-            $('#instagram, #tag_picture').empty();
+            
             
             for (var i = 0; i < 6; i++) {
 
