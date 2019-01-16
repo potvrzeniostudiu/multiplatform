@@ -4,10 +4,14 @@ $(document).ready(function () {
   var server = "https://api.tumblr.com/v2/tagged?tag="
   var api_klic = "&api_key=rINPEI7pnSo05XfzS2S3oVNTu4JT9RD8qRH1zhdCh9ShEz33uJ"
 
+  data = sessionStorage.getItem('tag');
+  $(".tag").val(data);
+
 
   $('.send').click(function(e) {
     e.preventDefault();
-    tag = $(".tag").val();
+    
+    var tag = $(".tag").val().replace('#', '');;
     $(".tumblr").empty();
 
     var settings = {
@@ -37,5 +41,6 @@ $(document).ready(function () {
         } 
       }
     });
+    sessionStorage.setItem('tag', tag);
   });
 });

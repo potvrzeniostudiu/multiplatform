@@ -3,7 +3,8 @@ $(document).ready(function () {
 
     $('.send').click(function (e) {
         e.preventDefault();
-        var tag = $(".tag").val();
+        var tag = $(".tag").val().replace('#', '');;
+
         $('#instagram, #tag_picture').empty();
 
         $.get('https://www.instagram.com/explore/tags/' + tag + '/?__a=1', function (data, status) {
