@@ -5,7 +5,7 @@ $(document).ready(function () {
   var api_klic = "&api_key=rINPEI7pnSo05XfzS2S3oVNTu4JT9RD8qRH1zhdCh9ShEz33uJ"
 
 
-  $('.odeslat').click(function(e) {
+  $('.send').click(function(e) {
     e.preventDefault();
     tag = $(".tag").val();
     $(".tumblr").empty();
@@ -21,21 +21,20 @@ $(document).ready(function () {
     }
 
     $.ajax(settings).done(function(odpoved) {
-      for (var i = 0; i < 3; i++) {     //problem, pokud neni min. pocet prispevku --> moznost pouzit odpoved.response.length
+      for (var i = 0; i < 8; i++) {     //problem, pokud neni min. pocet prispevku --> moznost pouzit odpoved.response.length
 
-        if(null != odpoved.response[i].photos) {    //pokud json obsahuje key photos
+        if(null != odpoved.response[i].photos) {  //pokud JSON obsahuje klic photo --> vyfiltrovani postu s obrazky
           post_picture = (odpoved.response[i].photos[0].original_size.url);   
-          $(".tumblr").append('<img src="' + post_picture + '">');    //prida obrazek
-        } else if (odpoved.response == 0) {
-        }
 
-      blog_name = (odpoved.response[i].blog_name);
-      caption = (odpoved.response[i].summary);
-      link = (odpoved.response[i].blog.url);
-      
-      $(".tumblr").append("<span>" + blog_name + " says:<br>" + caption + "</span><br>");
-      $(".tumblr").append('<a href="' + link + '">Odkaz</a><br>');
-      
+          $(".tumblr").append('<img src="' + post_picture + '">');
+
+          blog_name = (odpoved.response[i].blog_name);
+          caption = (odpoved.response[i].caption);
+          link = (odpoved.response[i].post_url);
+          
+          $(".tumblr").append("<span class='tumblr-desc'>" + blog_name + " píše:<br>" + caption + "</span><br>");
+          $(".tumblr").append('<a href="' + link + '">Blog</a><br>');
+        } 
       }
     });
   });

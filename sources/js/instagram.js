@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    $('.odeslat').click(function (e) {
+    $('.send').click(function (e) {
         e.preventDefault();
         var tag = $(".tag").val();
         $('#instagram, #tag_picture').empty();
@@ -9,7 +9,7 @@ $(document).ready(function () {
         $.get('https://www.instagram.com/explore/tags/' + tag + '/?__a=1', function (data, status) {
             
             
-            for (var i = 0; i < 6; i++) {
+            for (var i = 0; i < 10; i++) {
 
                 var $that = data.graphql.hashtag.edge_hashtag_to_media.edges[i].node;
 
