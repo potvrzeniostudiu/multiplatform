@@ -25,10 +25,8 @@ $(document).ready(function () {
 
         if(null != odpoved.response[i].photos) {    //pokud json obsahuje key photos
           post_picture = (odpoved.response[i].photos[0].original_size.url);   
-          console.log("foo");
           $(".tumblr").append('<img src="' + post_picture + '">');    //prida obrazek
         } else if (odpoved.response == 0) {
-          console.log("mrdka");
         }
 
       blog_name = (odpoved.response[i].blog_name);
