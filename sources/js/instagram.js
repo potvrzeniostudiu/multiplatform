@@ -18,11 +18,11 @@ $(document).ready(function () {
                 var post = $("#post_" + i);
 
                 post.append('<img src="' + $that.thumbnail_resources[2].src + '">');
-                post.append('<span class="description">POPIS: ' + $that.edge_media_to_caption.edges[0].node.text + '</span>');
+                post.append('<span class="description">Popis:<br><p>' + $that.edge_media_to_caption.edges[0].node.text + '</p></span> <span class="likes">' + $that.edge_liked_by.count + '</span>');
             }
 
-            $(".description").click(function () {
-                $(this).toggle("slow", function () {
+            $(".description, #instagram img").click(function () {
+                $(this).children().toggle("slow", function () {
                 });
             });
 

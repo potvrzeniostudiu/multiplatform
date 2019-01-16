@@ -1,0 +1,114 @@
+.vysledky {
+    width: 50%;
+    display: block;
+    float: left;
+    color: white;
+}
+
+#container {
+    width: 50%;
+    display: block;
+    float: right;
+}
+
+form {
+    text-align: center;
+    height: 70px;
+}
+
+form input {
+    margin-top: 30px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    margin-right: 30px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+body {
+    background-color: darkslategrey;
+}
+
+#container {
+    width: 1800px;
+}
+
+.fixed {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 50%;
+}
+
+.instagram-side {
+    right: 100px;
+}
+
+.tumblr-side {
+    left: 100px;
+}
+
+#tag_picture img {
+    border-radius: 90px;
+    border: 4px solid darkred;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.description {
+    float: left;
+}
+
+.post_block {
+    width: 320px;
+}
+
+#instagram > div {
+    width: 268px;
+    display: inline-block;
+    margin-right: 9px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+ #instagram .description p {
+     display: none;
+     word-break: break-all;
+     color: white;
+     font-size: 16px;
+     margin-bottom: 13px;
+ }
+
+ #instagram .description {
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+ }
+
+#instagram > div img, .description {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#instagram .likes {
+    position: absolute;
+    right: 22px;
+    top: 279px;
+    color: white;
+    font-size: 16px;
+    background-image: url(../images/likes.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    display: block;
+    height: 25px;
+    width: 25px;
+    padding-left: 8px;
+}
+
+.tumblr img {
+    width: 100%;
+}
