@@ -11,7 +11,7 @@ $(document).ready(function () {
   $('.send').click(function(e) {
     e.preventDefault();
     
-    var tag = $(".tag").val().replace('#', '');;
+    tag = $(".tag").val().replace('#', '');;
     $(".tumblr").empty();
 
     var settings = {
@@ -41,6 +41,7 @@ $(document).ready(function () {
         } 
       }
     });
-    sessionStorage.setItem('tag', "praha");
+    console.log(tag);
+    sessionStorage.setItem('tag', tag);
   });
 });
