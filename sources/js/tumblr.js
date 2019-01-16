@@ -41,6 +41,6 @@ $(document).ready(function () {
         } 
       }
     });
-    sessionStorage.setItem('tag', tag);
+    sessionStorage.setItem('tag', "praha");
   });
 });
