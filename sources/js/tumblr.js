@@ -11,7 +11,7 @@ $(document).ready(function () {
   $('.send').click(function(e) {
     e.preventDefault();
     
-    tag = $(".tag").val().replace('#?!', '');;
+    tag = $(".tag").val().replace('#', '');;
     $(".tumblr").empty();
 
     var settings = {
